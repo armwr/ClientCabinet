@@ -1,0 +1,84 @@
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+<body ng-controller="myCtrl as vm">
+	<div class="navbar-wrap">
+		<nav class="navbar">
+			<div class="col-sm-3 logo">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons headline">view_headline</i></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Location</a></li>
+							<li><a href="#">My custumers</a></li>
+							<li><a href="#">Password</a></li>
+						</ul>
+					</li>
+				</ul>
+				<h1 class="pull-left">LOGO</h1>
+			</div>
+			<div class="col-sm-7">
+				<div class="col-sm-4">
+					<input type="text" class="form-control search-what" placeholder="Search what">
+				</div>
+				<div class="col-sm-3 search-where">
+					<input type="text" class="form-control search-what" placeholder="Search where">
+				</div>
+				<div class="col-sm-5">
+					<ul class='navbar-icons clearfix'>
+						<li><span class="glyphicon glyphicon glyphicon-bell" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon glyphicon-comment white" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-9">
+				<h2 class="title-customers">My Customers</h2>
+				<h4 class="after-title">You can add your customers</h4>
+				<div class="col-sm-8">
+					<h4 class="title-customers">Costumers list<span class="pull-right see-more">See more</span></h4>
+					<div ng-repeat="person in vm.data" class="clearfix col-sm-12 contact">
+						<img ng-src="{{person.img}}" class="pull-left" alt="avatar">
+						<div class="left-part">
+							<p class="name-customer">{{person.name}}<i class="material-icons pull-right pencil">create</i></p>
+							<p class="address">{{person.address}}<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span></p>
+							<p class="fact-address">{{person.city}}<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="email">{{person.mail}}</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{{vm.name}}
+				My Search results
+			</div>
+			<div class="row">
+				<footer>Footer</footer>
+			</div>
+		</div>
+
+
+
+		<script src="bower_components\jquery\dist\jquery.min.js"></script>
+		<script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+		<script src="bower_components\angular\angular.min.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/factories/contacts.fac.js"></script>
+
+
+	</body>
+	</html>
