@@ -51,19 +51,32 @@
 				<h2 class="title-customers">My Customers</h2>
 				<h4 class="after-title">You can add your customers</h4>
 				<div class="col-sm-8">
-					<h4 class="title-customers">Costumers list<span class="pull-right see-more">See more</span></h4>
+					<h4 class="title-customers">Custumers list<span class="pull-right see-more">See more</span></h4>
 					<div ng-repeat="person in vm.data" class="clearfix col-sm-12 contact">
-						<img ng-src="{{person.img}}" class="pull-left" alt="avatar">
-						<div class="left-part">
-							<p class="name-customer">{{person.name}}<i class="material-icons pull-right pencil">create</i></p>
-							<p class="address">{{person.address}}<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span></p>
-							<p class="fact-address">{{person.city}}<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="email">{{person.mail}}</span></p>
+						<div class="editing-div">
+							<img ng-src="{{person.img}}" class="pull-left" alt="avatar">
+
+							<div ng-if="!vm.editing" class="left-part">
+								<p class="name-customer">{{person.name}}<i class="material-icons pull-right pencil"
+									ng-click="vm.editList(person)">create</i></p>
+									<p class="address">{{person.address}}<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span></p>
+									<p class="fact-address">{{person.city}}<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="email">{{person.mail}}</span></p>
+								</div>
+
+								<div ng-if="vm.editing">
+									<input type="text" ng-model="person.name"><i class="material-icons pull-right pencil" ng-click="vm.saveEdit()">create</i>
+									<input type="text" ng-model="person.address">
+									<input class="pull-right input-phone" type="text" ng-model="person.phone">
+									<input type="text" ng-model="person.city">
+									<input class="pull-right input-phone" type="text" ng-model="person.mail">
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				{{vm.name}}
 				My Search results
 			</div>
 			<div class="row">

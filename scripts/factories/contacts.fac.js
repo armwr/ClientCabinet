@@ -1,16 +1,19 @@
-// (function() {
-// 	'use strict'
+(function() {
+	'use strict'
 
-// 	angular
-// 	.module('app')
-// 	.factory('clientsFactory', clientsFactory)
+	angular
+	.module('app')
+	.factory('clientsFactory', clientsFactory)
 
-// 	function clientsFactory($http) {
-// 		return $http.get('mock/data.json')
-// 	}
+	function clientsFactory($http) {
 
-// 	return {
-// 		clientsFactory: clientsFactory;
-// 	}
+		function getClients() {
+			return $http.get('mock/data.json')
+		}
 
-// })()
+		return {
+			getClients: getClients
+		}
+	}
+
+})()

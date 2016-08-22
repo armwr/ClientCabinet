@@ -5,20 +5,30 @@
 	.module('app', [])
 	.controller('myCtrl', myCtrl);
 
+	function myCtrl($http, clientsFactory, $scope) {
 
-	// myCtrl.$inject = ['clientsFactory']
-
-
-	function myCtrl($http) {
-		var vm = this;
-
-
-
-		// vm.data = data;
-
-		$http.get('mock/data.json').then(function(clients) {
+		clientsFactory.getClients().then(function(clients) {
 			vm.data = clients.data
 		})
-		// vm.clientsFactory = clientsFactory;
+
+		var vm = this;
+		vm.editList = editList;
+		vm.saveEdit = saveEdit;
+
+		vm.editing;
+		vm.person;
+
+		function editList(person) {
+			vm.editing = true;
+			$scope.person = person;
+			console.log('Editing mode')
+		}
+
+		function saveEdit() {
+			vm.editing = false;
+			vm.person = {};
+			console.log('Edited!')
+		}
+
 	}
 })()

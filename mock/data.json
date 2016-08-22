@@ -7,17 +7,9 @@
 		"city": "Richmond Hill, ON LE4",
 		"mail": "redcat@gmail.com"
 	},
-		{
+	{
 		"img": "img/avatar.png",
-		"name": "JIM CHAI KIM",
-		"address": "13321,Young Street,",
-		"phone": "(289) 234 3333",
-		"city": "Richmond Hill, ON LE4",
-		"mail": "redcat@gmail.com"
-	},
-		{
-		"img": "img/avatar.png",
-		"name": "JIM CHAI KIM",
+		"name": "JIM JAY B",
 		"address": "13321,Young Street,",
 		"phone": "(289) 234 3333",
 		"city": "Richmond Hill, ON LE4",
@@ -25,7 +17,15 @@
 	},
 	{
 		"img": "img/avatar.png",
-		"name": "JIM CHAI KIM",
+		"name": "JIM CHAI C",
+		"address": "13321,Young Street,",
+		"phone": "(289) 234 3333",
+		"city": "Richmond Hill, ON LE4",
+		"mail": "redcat@gmail.com"
+	},
+	{
+		"img": "img/avatar.png",
+		"name": "JIM CHAI P",
 		"address": "13321,Young Street,",
 		"phone": "(289) 234 3333",
 		"city": "Richmond Hill, ON LE4",
