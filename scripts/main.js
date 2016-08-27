@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-	.module('app', [])
+	.module('app', ['angularUtils.directives.dirPagination'])
 	.controller('myCtrl', myCtrl);
 
 	function myCtrl($http, clientsFactory, $scope) {
@@ -12,5 +12,7 @@
 		})
 
 		var vm = this;
+
+	
 	}
 })()

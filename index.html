@@ -48,75 +48,68 @@
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-9">
+
+				<!-- Customers -->
+
 				<h2 class="title-customers">My Customers</h2>
-				<h4 class="after-title">You can add your customers</h4>
-			<!-- 	<div class="col-sm-8">
-					<h4 class="title-customers">Custumers list<span class="pull-right see-more">See more</span></h4>
-					<div ng-repeat="person in vm.data" class="clearfix col-sm-12 contact">
-						<div ng-if="!vm.editing" class="editing-div">
-							<img ng-src="{{person.img}}" class="pull-left" alt="avatar">
-							<div class="left-part">
-								<p class="name-customer">{{person.name}}<i ng-click="vm.editProduct(product)" class="material-icons pull-right pencil"
-								ng-click="vm.editList(person)">create</i></p>
-								<p class="address">{{person.address}}<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span></p>
-								<p class="fact-address">{{person.city}}<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="email">{{person.mail}}</span></p>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div> -->
-				
+				<h4 class="after-title">You can add your customers</h4>				
 				<div class="col-sm-8">
 					<h4 class="title-customers">Custumers list<span class="pull-right see-more">See more</span></h4>
-					<div ng-repeat="person in vm.data" data-ng-class="{danger:!person.active}">
+					<div dir-paginate="person in vm.data | itemsPerPage: 4">
 						<div class="editing-div clearfix">
 							<img ng-src="{{person.img}}" class="pull-left" alt="avatar">
-							<div class="left-part">
+							<div class="left-part clearfix">
 								<p ng-hide="editMode" class="name-customer">{{person.name}}
 									<i class="material-icons pull-right pencil"
-									ng-click="editMode = true">create</i></p>
-									<p ng-hide="editMode" class="address">{{person.address}}<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span></p>
-									<p  ng-hide="editMode" class="fact-address">{{person.city}}<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="email">{{person.mail}}</span></p>
-									
-									<div ng-show="editMode" class="edit-mode">
-										<input type="text" ng-model="person.name"> 
-										<i class="material-icons pull-right pencil"
-										ng-show="editMode" 
-										ng-click="editMode = false">create</i>
-										</br>
-										<input type="text" ng-model="person.address">
-										<input type="text" ng-model="person.phone">
-										<input type="text" ng-model="person.city">
-										<input type="text" ng-model="person.mail">
-									</div>
+									ng-click="editMode = true">create</i>
+								</p>
+								<p ng-hide="editMode" class="address">{{person.address}}
+									<i class="material-icons phone-number">phone</i><span>{{person.phone}}</span>
+								</p>
+								<p ng-hide="editMode" class="fact-address">{{person.city}}
+									<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+									<span class="email">{{person.mail}}</span>
+								</p>
+
+								<div ng-show="editMode" class="edit-mode">
+									<input type="text" ng-model="person.name"> 
+									<i class="material-icons pull-right pencil"
+									ng-show="editMode" 
+									ng-click="editMode = false">create</i>
+									<br>
+									<input type="text" ng-model="person.address">
+									<input type="text" ng-model="person.phone">
+									<input type="text" ng-model="person.city">
+									<input type="text" ng-model="person.mail">
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- Pagination -->
+					
+					<dir-pagination-controls class="pull-right"
+						[max-size="5"]
+						[direction-links=""]
+						[boundary-links=""]
+						[on-page-change=""]
+						[pagination-id=""]
+						[template-url=""]
+						[auto-hide=""]>
+					</dir-pagination-controls>
 
-
-
-
-
-
-
-				</div>
-				<div class="row">
-					My Search results
-				</div>
-				<div class="row">
-					<footer>Footer</footer>
-				</div>
 			</div>
+		</div>
 
 
 
-			<script src="bower_components\jquery\dist\jquery.min.js"></script>
-			<script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
-			<script src="bower_components\angular\angular.min.js"></script>
-			<script src="scripts/main.js"></script>
-			<script src="scripts/factories/contacts.fac.js"></script>
+		<script src="bower_components\jquery\dist\jquery.min.js"></script>
+		<script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+		<script src="bower_components\angular\angular.min.js"></script>
+		<!-- <script src="bower_components\angular-bootstrap\ui-bootstrap-tpls.js"></script> -->
+		<script src="bower_components\angularUtils-pagination\dirPagination.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/factories/contacts.fac.js"></script>
 
 
-		</body>
-		</html>
+	</body>
+	</html>
